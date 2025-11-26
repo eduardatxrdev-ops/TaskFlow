@@ -1,0 +1,14 @@
+[
+    {
+        "nome": "Usuário Demo",
+        "email": "demo@example.local",
+        "login": "demo_integ",
+        "senha": "senha"
+    },
+    {
+        "nome": "Robert",
+        "email": "hobert",
+        "login": "shock",
+        "senha": "123"
+    }
+]
