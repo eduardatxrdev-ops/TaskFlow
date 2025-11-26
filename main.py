@@ -2,23 +2,21 @@ from time import sleep
 import os
 
 # Import seguro de helpers de interface; fornece fallback simples se o pacote não existir
-try:
-    from lib.interface.interface import cabeçalho, menu
-except Exception:
-    def cabeçalho(titulo: str) -> None:
-        print(f"\n=== {titulo} ===")
 
-    def menu(opcoes: list) -> int:
-        for i, o in enumerate(opcoes, start=1):
-            print(f"{i}. {o}")
-        while True:
-            try:
-                escolha = int(input('Escolha: ').strip())
-                if 1 <= escolha <= len(opcoes):
-                    return escolha
-            except Exception:
-                pass
-            print('Opção inválida. Tente novamente.')
+def cabeçalho(titulo: str) -> None:
+    print(f"\n=== {titulo} ===")
+
+def menu(opcoes: list) -> int:
+    for i, o in enumerate(opcoes, start=1):
+        print(f"{i}. {o}")
+    while True:
+        try:
+            escolha = int(input('Escolha: ').strip())
+            if 1 <= escolha <= len(opcoes):
+                return escolha
+        except Exception:
+            pass
+        print('Opção inválida. Tente novamente.')
 
 from usuario import criarUsuario, usuarioExiste, cadastrar_usuario, autenticar
 os.system("cls")
